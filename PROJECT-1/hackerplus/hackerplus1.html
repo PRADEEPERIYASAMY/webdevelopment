@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="shortcut icon" href="https://img.icons8.com/doodle/48/000000/controller--v1.png" type="image/x-icon" type=" image/x-icon ">
-     <link rel="stylesheet" type="text/css" href="/mediahp1.css">
+     <link rel="stylesheet" type="text/css" href="/css/mediahp1.css">
 </head>
 
-<body style="background-image: url(/indexbck.png);">
+<body style="background-image: url(/images/indexbck.jpg);">
 
     <div class=" root ">
-        <div class="div1" style="background-image: url(/catchme.png);">
+        <div class="div1" style="background-image: url(/images/catchme.jpg);">
             .
         </div>
         <div class="div2">
@@ -120,19 +120,19 @@
      </p>
     </div>
     <audio controls preload="auto" loop style="display: none">
-<source src="/tick.ogg" type="audio/ogg" />
+<source src="/sounds/tick.ogg" type="audio/ogg" />
 </audio>
 <audio controls preload="auto" style="display: none">
- <source src="/click.ogg" type="audio/ogg" />
+ <source src="/sounds/click.ogg" type="audio/ogg" />
 </audio>
 <audio controls preload="auto" style="display: none">
- <source src="/countdown.ogg" type="audio/ogg" />
+ <source src="/sounds/countdown.ogg" type="audio/ogg" />
 </audio>
 <audio controls preload="auto" style="display: none">
- <source src="/secondclick.ogg" type="audio/ogg" />
+ <source src="/sounds/secondclick.ogg" type="audio/ogg" />
 </audio>
     <script>
-        var number = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99];
+        var number = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21];
         
                 var mycount;
         var go = 5;
@@ -149,6 +149,7 @@
                      clearInterval(mycount);
                      myFunction();
                      playi();
+                     color();
                  }
                 
             },1000);
@@ -211,29 +212,22 @@
                }
         }
         
-        document.getElementById("1").onclick = function(){
+  document.getElementById("1").onclick = function(){
             clicki();
             var one = Number(document.getElementById("1").innerText);
             if(aray[0] == one) {
-                document.getElementById("1").style.display="none";
-                document.getElementById("a1").style.display="none";
                 aray.shift();
-                if(last == 1){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a1").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a1").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a1").style.display="none";
-                document.getElementById("1").style.display="none";
-                aray.shift();
-                if(lasta == "a1"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("1").innerText=aray[aray.length-1];
+                    document.getElementById("a1").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("1").style.display="none";
+                    document.getElementById("a1").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -246,25 +240,18 @@
             clicki();
             var one = Number(document.getElementById("2").innerText);
             if(aray[0] == one) {
-                document.getElementById("2").style.display="none";
-                document.getElementById("a2").style.display="none";
                 aray.shift();
-                if(last == 2){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a2").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a2").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a2").style.display="none";
-                 document.getElementById("2").style.display="none";
-                aray.shift();
-                if(lasta == "a2"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("2").innerText=aray[aray.length-1];
+                    document.getElementById("a2").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("2").style.display="none";
+                    document.getElementById("a2").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -277,25 +264,18 @@
             clicki();
             var one = Number(document.getElementById("3").innerText);
             if(aray[0] == one) {
-                document.getElementById("3").style.display="none";
-                document.getElementById("a3").style.display="none";
                 aray.shift();
-                if(last == 3){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-         document.getElementById("a3").onclick = function(){
-             clicki();
-            var one = Number(document.getElementById("a3").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a3").style.display="none";
-                document.getElementById("3").style.display="none";
-                aray.shift();
-                if(lasta == "a3"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("3").innerText=aray[aray.length-1];
+                    document.getElementById("a3").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("3").style.display="none";
+                    document.getElementById("a3").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -308,25 +288,18 @@
             clicki();
             var one = Number(document.getElementById("4").innerText);
             if(aray[0] == one) {
-                document.getElementById("4").style.display="none";
-                document.getElementById("a4").style.display="none";
                 aray.shift();
-                if(last == 4){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-         document.getElementById("a4").onclick = function(){
-             clicki();
-            var one = Number(document.getElementById("a4").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a4").style.display="none";
-                document.getElementById("4").style.display="none";
-                aray.shift();
-                if(lasta == "a4"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("4").innerText=aray[aray.length-1];
+                    document.getElementById("a4").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("4").style.display="none";
+                    document.getElementById("a4").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -339,25 +312,18 @@
             clicki();
             var one = Number(document.getElementById("5").innerText);
             if(aray[0] == one) {
-                document.getElementById("5").style.display="none";
-                document.getElementById("a5").style.display="none";
                 aray.shift();
-                if(last == 5){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-         document.getElementById("a5").onclick = function(){
-             clicki();
-            var one = Number(document.getElementById("a5").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a5").style.display="none";
-                document.getElementById("5").style.display="none";
-                aray.shift();
-                if(lasta == "a5"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("5").innerText=aray[aray.length-1];
+                    document.getElementById("a5").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("5").style.display="none";
+                    document.getElementById("a5").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -370,25 +336,18 @@
             clicki();
             var one = Number(document.getElementById("6").innerText);
             if(aray[0] == one) {
-                document.getElementById("6").style.display="none";
-                document.getElementById("a6").style.display="none";
                 aray.shift();
-                if(last == 6){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-         document.getElementById("a6").onclick = function(){
-             clicki();
-            var one = Number(document.getElementById("a6").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a6").style.display="none";
-                document.getElementById("6").style.display="none";
-                aray.shift();
-                if(lasta == "a6"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("6").innerText=aray[aray.length-1];
+                    document.getElementById("a6").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("6").style.display="none";
+                    document.getElementById("a6").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -401,25 +360,18 @@
             clicki();
             var one = Number(document.getElementById("7").innerText);
             if(aray[0] == one) {
-                document.getElementById("7").style.display="none";
-                document.getElementById("a7").style.display="none";
                 aray.shift();
-                if(last == 7){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-         document.getElementById("a7").onclick = function(){
-             clicki();
-            var one = Number(document.getElementById("a7").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a7").style.display="none";
-                document.getElementById("7").style.display="none";
-                aray.shift();
-                if(lasta == "a7"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("7").innerText=aray[aray.length-1];
+                    document.getElementById("a7").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("7").style.display="none";
+                    document.getElementById("a7").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -432,25 +384,18 @@
             clicki();
             var one = Number(document.getElementById("8").innerText);
             if(aray[0] == one) {
-                document.getElementById("8").style.display="none";
-                document.getElementById("a8").style.display="none";
                 aray.shift();
-                if(last == 8){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-         document.getElementById("a8").onclick = function(){
-             clicki();
-            var one = Number(document.getElementById("a8").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a8").style.display="none";
-                document.getElementById("8").style.display="none";
-                aray.shift();
-                if(lasta == "a8"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("8").innerText=aray[aray.length-1];
+                    document.getElementById("a8").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("8").style.display="none";
+                    document.getElementById("a8").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -463,25 +408,18 @@
             clicki();
             var one = Number(document.getElementById("9").innerText);
             if(aray[0] == one) {
-                document.getElementById("9").style.display="none";
-                document.getElementById("a9").style.display="none";
                 aray.shift();
-                if(last == 9){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-         document.getElementById("a9").onclick = function(){
-             clicki();
-            var one = Number(document.getElementById("a9").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a9").style.display="none";
-                document.getElementById("9").style.display="none";
-                aray.shift();
-                if(lasta == "a9"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("9").innerText=aray[aray.length-1];
+                    document.getElementById("a9").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("9").style.display="none";
+                    document.getElementById("a9").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -492,27 +430,20 @@
         
         document.getElementById("10").onclick = function(){
             clicki();
-            var one = Number(document.getElementById("10").innerText);
+           var one = Number(document.getElementById("10").innerText);
             if(aray[0] == one) {
-                document.getElementById("10").style.display="none";
-                document.getElementById("a10").style.display="none";
                 aray.shift();
-                if(last == 10){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-         document.getElementById("a10").onclick = function(){
-             clicki();
-            var one = Number(document.getElementById("a10").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a10").style.display="none";
-                document.getElementById("10").style.display="none";
-                aray.shift();
-                if(lasta == "a10"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("10").innerText=aray[aray.length-1];
+                    document.getElementById("a10").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("10").style.display="none";
+                    document.getElementById("a10").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -525,25 +456,18 @@
             clicki();
             var one = Number(document.getElementById("11").innerText);
             if(aray[0] == one) {
-                document.getElementById("11").style.display="none";
-                document.getElementById("a11").style.display="none";
                 aray.shift();
-                if(last == 11){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-         document.getElementById("a11").onclick = function(){
-             clicki();
-            var one = Number(document.getElementById("a11").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a11").style.display="none";
-                document.getElementById("11").style.display="none";
-                aray.shift();
-                if(lasta == "a11"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("11").innerText=aray[aray.length-1];
+                    document.getElementById("a11").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("11").style.display="none";
+                    document.getElementById("a11").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -556,25 +480,18 @@
             clicki();
             var one = Number(document.getElementById("12").innerText);
             if(aray[0] == one) {
-                document.getElementById("12").style.display="none";
-                document.getElementById("a12").style.display="none";
                 aray.shift();
-                if(last == 12){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a12").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a12").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a12").style.display="none";
-                document.getElementById("12").style.display="none";
-                aray.shift();
-                if(lasta == "a12"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("12").innerText=aray[aray.length-1];
+                    document.getElementById("a12").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("12").style.display="none";
+                    document.getElementById("a12").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -587,25 +504,18 @@
             clicki();
             var one = Number(document.getElementById("13").innerText);
             if(aray[0] == one) {
-                document.getElementById("13").style.display="none";
-                document.getElementById("a13").style.display="none";
                 aray.shift();
-                if(last == 13){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a13").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a13").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a13").style.display="none";
-                document.getElementById("13").style.display="none";
-                aray.shift();
-                if(lasta == "a13"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("13").innerText=aray[aray.length-1];
+                    document.getElementById("a13").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("13").style.display="none";
+                    document.getElementById("a13").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -618,25 +528,18 @@
             clicki();
             var one = Number(document.getElementById("14").innerText);
             if(aray[0] == one) {
-                document.getElementById("14").style.display="none";
-                document.getElementById("a14").style.display="none";
                 aray.shift();
-                if(last == 14){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a14").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a14").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a14").style.display="none";
-                document.getElementById("14").style.display="none";
-                aray.shift();
-                if(lasta == "a14"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("14").innerText=aray[aray.length-1];
+                    document.getElementById("a14").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("14").style.display="none";
+                    document.getElementById("a14").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -649,25 +552,18 @@
             clicki();
             var one = Number(document.getElementById("15").innerText);
             if(aray[0] == one) {
-                document.getElementById("15").style.display="none";
-                 document.getElementById("a15").style.display="none";
                 aray.shift();
-                if(last == 15){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a15").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a15").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a15").style.display="none";
-                 document.getElementById("15").style.display="none";
-                aray.shift();
-                if(lasta == "a15"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("15").innerText=aray[aray.length-1];
+                    document.getElementById("a15").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("15").style.display="none";
+                    document.getElementById("a15").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -680,25 +576,18 @@
             clicki();
             var one = Number(document.getElementById("16").innerText);
             if(aray[0] == one) {
-                document.getElementById("16").style.display="none";
-                 document.getElementById("a16").style.display="none";
                 aray.shift();
-                if(last == 16){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a16").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a16").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a16").style.display="none";
-                 document.getElementById("16").style.display="none";
-                aray.shift();
-                if(lasta == "a16"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("16").innerText=aray[aray.length-1];
+                    document.getElementById("a16").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("16").style.display="none";
+                    document.getElementById("a16").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -709,27 +598,20 @@
         
         document.getElementById("17").onclick = function(){
             clicki();
-            var one = Number(document.getElementById("17").innerText);
+           var one = Number(document.getElementById("17").innerText);
             if(aray[0] == one) {
-                document.getElementById("17").style.display="none";
-                document.getElementById("a17").style.display="none";
                 aray.shift();
-                if(last == 17){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a17").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a17").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a17").style.display="none";
-                document.getElementById("17").style.display="none";
-                aray.shift();
-                if(lasta == "a17"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("17").innerText=aray[aray.length-1];
+                    document.getElementById("a17").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("17").style.display="none";
+                    document.getElementById("a17").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -742,25 +624,18 @@
             clicki();
             var one = Number(document.getElementById("18").innerText);
             if(aray[0] == one) {
-                document.getElementById("18").style.display="none";
-                document.getElementById("a18").style.display="none";
                 aray.shift();
-                if(last == 18){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a18").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a18").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a18").style.display="none";
-                document.getElementById("18").style.display="none";
-                aray.shift();
-                if(lasta == "a18"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("18").innerText=aray[aray.length-1];
+                    document.getElementById("a18").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("18").style.display="none";
+                    document.getElementById("a18").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -771,27 +646,20 @@
         
         document.getElementById("19").onclick = function(){
             clicki();
-            var one = Number(document.getElementById("19").innerText);
+           var one = Number(document.getElementById("19").innerText);
             if(aray[0] == one) {
-                document.getElementById("19").style.display="none";
-                document.getElementById("a19").style.display="none";
                 aray.shift();
-                if(last == 19){
-                   clearInterval(myVar);
-                    Score();
-                    stopi();
-                    scoring();
-                   }
-            }
-        }
-        document.getElementById("a19").onclick = function(){
-            clicki();
-            var one = Number(document.getElementById("a19").innerText);
-            if(aray[0] == one) {
-                document.getElementById("a19").style.display="none";
-                document.getElementById("19").style.display="none";
-                aray.shift();
-                if(lasta == "a19"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("19").innerText=aray[aray.length-1];
+                    document.getElementById("a19").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("19").style.display="none";
+                    document.getElementById("a19").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -802,12 +670,20 @@
         
         document.getElementById("20").onclick = function(){
             clicki();
-            var one = Number(document.getElementById("20").innerText);
+           var one = Number(document.getElementById("20").innerText);
             if(aray[0] == one) {
-                document.getElementById("20").style.display="none";
-                document.getElementById("a20").style.display="none";
                 aray.shift();
-                if(last == 20){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("20").innerText=aray[aray.length-1];
+                    document.getElementById("a20").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("20").style.display="none";
+                    document.getElementById("a20").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -815,14 +691,22 @@
                    }
             }
         }
-        document.getElementById("a20").onclick = function(){
+        document.getElementById("a1").onclick = function(){
             clicki();
-            var one = Number(document.getElementById("a20").innerText);
+            var one = Number(document.getElementById("1").innerText);
             if(aray[0] == one) {
-                document.getElementById("a20").style.display="none";
-                document.getElementById("20").style.display="none";
                 aray.shift();
-                if(lasta == "a20"){
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("1").innerText=aray[aray.length-1];
+                    document.getElementById("a1").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("1").style.display="none";
+                    document.getElementById("a1").style.display="none";
+                }
+                if(one == 60){
                    clearInterval(myVar);
                     Score();
                     stopi();
@@ -831,127 +715,592 @@
             }
         }
         
-         for(i =0;i<20;i++){
+        document.getElementById("a2").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("2").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("2").innerText=aray[aray.length-1];
+                    document.getElementById("a2").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("2").style.display="none";
+                    document.getElementById("a2").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a3").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("3").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("3").innerText=aray[aray.length-1];
+                    document.getElementById("a3").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("3").style.display="none";
+                    document.getElementById("a3").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a4").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("4").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("4").innerText=aray[aray.length-1];
+                    document.getElementById("a4").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("4").style.display="none";
+                    document.getElementById("a4").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a5").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("5").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("5").innerText=aray[aray.length-1];
+                    document.getElementById("a5").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("5").style.display="none";
+                    document.getElementById("a5").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a6").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("6").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("6").innerText=aray[aray.length-1];
+                    document.getElementById("a6").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("6").style.display="none";
+                    document.getElementById("a6").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a7").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("7").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("7").innerText=aray[aray.length-1];
+                    document.getElementById("a7").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("7").style.display="none";
+                    document.getElementById("a7").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a8").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("8").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("8").innerText=aray[aray.length-1];
+                    document.getElementById("a8").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("8").style.display="none";
+                    document.getElementById("a8").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a9").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("9").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("9").innerText=aray[aray.length-1];
+                    document.getElementById("a9").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("9").style.display="none";
+                    document.getElementById("a9").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a10").onclick = function(){
+            clicki();
+           var one = Number(document.getElementById("10").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("10").innerText=aray[aray.length-1];
+                    document.getElementById("a10").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("10").style.display="none";
+                    document.getElementById("a10").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a11").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("11").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("11").innerText=aray[aray.length-1];
+                    document.getElementById("a11").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("11").style.display="none";
+                    document.getElementById("a11").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a12").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("12").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("12").innerText=aray[aray.length-1];
+                    document.getElementById("a12").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("12").style.display="none";
+                    document.getElementById("a12").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a13").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("13").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("13").innerText=aray[aray.length-1];
+                    document.getElementById("a13").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("13").style.display="none";
+                    document.getElementById("a13").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a14").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("14").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("14").innerText=aray[aray.length-1];
+                    document.getElementById("a14").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("14").style.display="none";
+                    document.getElementById("a14").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a15").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("15").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("15").innerText=aray[aray.length-1];
+                    document.getElementById("a15").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("15").style.display="none";
+                    document.getElementById("a15").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a16").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("16").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("16").innerText=aray[aray.length-1];
+                    document.getElementById("a16").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("16").style.display="none";
+                    document.getElementById("a16").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a17").onclick = function(){
+            clicki();
+           var one = Number(document.getElementById("17").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("17").innerText=aray[aray.length-1];
+                    document.getElementById("a17").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("17").style.display="none";
+                    document.getElementById("a17").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a18").onclick = function(){
+            clicki();
+            var one = Number(document.getElementById("18").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("18").innerText=aray[aray.length-1];
+                    document.getElementById("a18").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("18").style.display="none";
+                    document.getElementById("a18").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a19").onclick = function(){
+            clicki();
+           var one = Number(document.getElementById("19").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("19").innerText=aray[aray.length-1];
+                    document.getElementById("a19").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("19").style.display="none";
+                    document.getElementById("a19").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        document.getElementById("a20").onclick = function(){
+            clicki();
+           var one = Number(document.getElementById("20").innerText);
+            if(aray[0] == one) {
+                aray.shift();
+                if(one+document.getElementsByClassName("but1").length<=3*document.getElementsByClassName("but1").length){
+                    aray.push(one+document.getElementsByClassName("but1").length);
+                    document.getElementById("20").innerText=aray[aray.length-1];
+                    document.getElementById("a20").innerText=aray[aray.length-1];
+                    color();
+                }
+                else{
+                    document.getElementById("20").style.display="none";
+                    document.getElementById("a20").style.display="none";
+                }
+                if(one == 60){
+                   clearInterval(myVar);
+                    Score();
+                    stopi();
+                    scoring();
+                   }
+            }
+        }
+        
+        
+         function color(){
+            for (i = 0;i<document.getElementsByClassName("but1").length;i++)
+            {
+                myvay =Number(document.getElementsByClassName("but1")[i].innerText);
+                aray[i]=myvay;
+            }
+        aray.sort(function(a, b){return a-b}); 
+            for(i =0;i<20;i++){
             if(Number(document.getElementsByClassName("but1")[i].innerText == aray[0])){
-                  document.getElementsByClassName("but1")[i].style.backgroundColor = "rgb(184,184,184)";
-                 document.getElementsByClassName("but1a")[i].style.backgroundColor = "rgb(184,184,184)";
+                  document.getElementsByClassName("but1")[i].style.backgroundColor = "rgb(228,228,228)";
+                document.getElementsByClassName("but1a")[i].style.backgroundColor = "rgb(228,228,228)";
                 }
              if(Number(document.getElementsByClassName("but1")[i].innerText == aray[1])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                 "rgb(176,176,176)";
+                 "rgb(220,220,220)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                 "rgb(176,176,176)";
+                 "rgb(220,220,220)";
                 }
              if(Number(document.getElementsByClassName("but1")[i].innerText == aray[2])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(169,169,169)";
+                    "rgb(216,216,216)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(169,169,169)";
+                    "rgb(216,216,216)";
                 }
              if(Number(document.getElementsByClassName("but1")[i].innerText == aray[3])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(168,168,168)";
-                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(168,168,168)";
+                    "rgb(207,207,207)";
+                 document.getElementsByClassName("but1a")[i].style.backgroundColor = 
+                    "rgb(207,207,207)";
                 }
              if(Number(document.getElementsByClassName("but1")[i].innerText == aray[4])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(160,160,160)";
+                    "rgb(198,198,198)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(160,160,160)";
+                    "rgb(198,198,198)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[5])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(152,152,152)";
+                    "rgb(190,190,190)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(152,152,152)";
+                    "rgb(190,190,190)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[6])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(144,144,144)";
+                    "rgb(184,184,184)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(144,144,144)";
+                    "rgb(184,184,184)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[7])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor =
-                    "rgb(136,136,136)";
+                    "rgb(176,176,176)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor =
-                    "rgb(136,136,136)";
+                    "rgb(176,176,176)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[8])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(128,128,128)";
+                    "rgb(168,168,168)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(128,128,128)";
+                    "rgb(168,168,168)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[9])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(120,120,120)";
+                    "rgb(160,160,160)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(120,120,120)";
+                    "rgb(160,160,160)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[10])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(112,112,112)";
+                    "rgb(152,152,152)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(112,112,112)";
+                    "rgb(152,152,152)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[11])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(105,105,105)";
+                    "rgb(144,144,144)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(105,105,105)";
+                    "rgb(144,144,144)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[12])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(104,104,104)";
+                    "rgb(136,136,136)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(104,104,104)";
+                    "rgb(136,136,136)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[13])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(96,96,96)";
-                 document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(96,96,96)";
+                    "rgb(128,128,128)";
+                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
+                    "rgb(128,128,128)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[14])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(88,88,88)";
-                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(88,88,88)";
+                    "rgb(120,120,120)";
+                 document.getElementsByClassName("but1a")[i].style.backgroundColor = 
+                    "rgb(120,120,120)";
                 }
-                
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[15])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(80,80,80)";
+                    "rgb(112,112,112)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(80,80,80)";
+                    "rgb(112,112,112)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[16])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(72,72,72)";
-                 document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(72,72,72)";
+                    "rgb(104,104,104)";
+                document.getElementsByClassName("but1a")[i].style.backgroundColor = 
+                    "rgb(104,104,104)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[17])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(64,64,64)";
+                    "rgb(96,96,96)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(64,64,64)";
+                    "rgb(96,96,96)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[18])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(56,56,56)";
+                    "rgb(88,88,88)";
                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(56,56,56)";
+                    "rgb(88,88,88)";
                 }
              else if(Number(document.getElementsByClassName("but1")[i].innerText == aray[19])){
                 document.getElementsByClassName("but1")[i].style.backgroundColor = 
-                    "rgb(48,48,48)";
-                  document.getElementsByClassName("but1a")[i].style.backgroundColor = 
-                    "rgb(48,48,48)";
+                    "rgb(80,80,80)";
+                 document.getElementsByClassName("but1a")[i].style.backgroundColor = 
+                    "rgb(80,80,80)";
                 }
         }
+        }
+         
         
        function Score(){
         document.getElementById("countdown1").style.display="block";
