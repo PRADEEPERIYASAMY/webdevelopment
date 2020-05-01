@@ -1,142 +1,254 @@
 @media only screen
-    and (max-width : 420px){
+    and (max-width : 500px){
         body{
-            background-image: url(/images/indexbck.jpg);background-repeat: repeat;background-size: 360px 640px ;
+            background-image: url(/images/indexbck.jpg);
+            background-repeat: repeat;
+            background-size: 50% 100vh;
+            width:114vw;
+            height: 114vh;
         }
         #but{
-            grid-area: 2/2/3/3;background-image: url(/images/fill.jpg);background-size: 118.4px 200px;background-repeat: no-repeat;margin-left: -5px;
+            grid-area: 2/2/3/3;
+            background-image: url(/images/fill.jpg);
+            background-size: 33.33vw 40vh;
+            background-repeat: no-repeat;
+            margin-left: -3vw;
         }
         .subbut{
-            width:75px;height:130px;margin:27px;
         }
          #grid {
-            display: grid;
-            grid-template-rows: 290px 250px;
-            grid-template-columns: 118.5px;
-             height: 580px;width:118.5px; 
+             position: absolute;
+             display: grid;
+             grid-template-rows: 45vh 33vh;
+             grid-template-columns: 100%;
+             height: 80vh;width:96%; 
+             top: 18vh;left: 2%;
         }
         
         #div1 {
-            padding-top: 5px;
-            padding-left: 5px;
+            padding-left: 1vw;
+            padding-right: 1vw;
             display: grid;
-            grid-template-rows: 90px 200px;
-            grid-template-columns: 118.5px 118.5px 118.5px;
-            margin: 5px;
+            grid-template-rows: 10vh 28vh;
+            grid-template-columns: 32vw 32vw 32vw;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+            margin-left: 1vw;
+            margin-right: 1vw;
         }
         .subdiv1{
-            grid-area:1/1/2/4;background-image: url(/images/gamemode.jpg);background-size: 350px 90px;background-repeat: no-repeat;
+            grid-area:1/1/2/4;
+            background-image: url(/images/gamemode.jpg);
+            background-size: 98% 100%;
+            background-repeat: no-repeat;
+            margin-left: -1vw;
         }
         
         .btn {
-            height: 40px;
-            width: 75px;
+            height: 7vh;
+            width: 25vw;
         }
         
         .anc {
             text-decoration: none;
         }
         .maindiv{
-            height:50px;width:350px;margin:5px;font-size:1px;
+            position: absolute;
+            height:15vh;
+            width:96%;
+            top: 2vh;
+            left: 2%;
+            
         }
         .subdiv{
-            width: 350px;height: 50px;background-image: url(/images/countgme.jpg);background-position: center;background-size: 350px 50px;
+            position: absolute;
+            width: 100%;
+            height: 15vh;
+            background-image: url(/images/countgme.jpg);
+            background-size: 100% 100%;
         }
         #div2{
-            height: 250px;width:350px;margin=5px;
+            height: 33vh;
+            width:100%;
         }
         .div2sub{
-            background-image: url(/images/abtgame.jpg);background-size: 350px 250px;height:250px;width:350px;margin:5px;background-repeat: no-repeat;
+            position: absolute;
+            background-image: url(/images/abtgame.jpg);
+            background-size: 100% 100%;
+            height:40%;
+            width:100%;
+            background-repeat: no-repeat;
+            top: 40vh;
         }
         #img{
-            background-image: url(/images/imgtwo.jpg);background-size: 118.5px 200px;grid-area: 2/3/3/4;margin-left: -10px;
+            background-image: url(/images/imgtwo.jpg);
+            background-size: 94% 100%;
+            grid-area: 2/3/3/4;
+            margin-left: -2vw;
             background-repeat: no-repeat;
         }
         .img{
-            grid-area: 2/1/3/2;background-image: url(/images/imgone.jpg);background-size: 118.5px 200px;margin-left: -3px;background-repeat: no-repeat;
+            grid-area: 2/1/3/2;
+            background-image: url(/images/imgone.jpg);
+            background-size: 94% 100%;
+            margin-left: -0.4vh;
+            background-repeat: no-repeat;
         }
         .norm{
-            margin-top:2mm;background-image: url(/images/normbut.jpg);background-size: 75px 40px;
+            position: absolute;
+            background-image: url(/images/normbut.jpg);
+            background-size: 100% 100%;
+            top: 13vh;
+            left: 36vw;
         }
         .hack{
-            background-image: url(/images/hackerbut.jpg);background-size: 75px 40px;
+            position: absolute;
+            background-image: url(/images/hackerbut.jpg);
+            background-size: 100% 100%;
+            top: 21vh;
+            left: 36vw;
         }
         .plus{
-            background-image: url(/images/hackerplusbut.jpg);background-size: 75px 40px;
+            position: absolute;
+            background-image: url(/images/hackerplusbut.jpg);
+            background-size: 100% 100%;
+            top: 29vh;
+            left: 36vw;
         }
         .div3{
-            height: 40px ;width:350px;background-image: url(/images/allthebest.jpg);background-size: 360px 40px;background-repeat: no-repeat;background-position: center;margin-left: 5px;margin-right: 5px
+            position: absolute;
+            height:5vh ;
+            width:100%;
+            background-image: url(/images/allthebest.jpg);
+            background-size:100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            top: 73vh;
         }
         
 }
 
 @media only screen
-    and (min-width : 421px) {
+    and (min-width : 501px) {
         body{
-            background-image: url(/images/indexbck.jpg);background-repeat: repeat-x;
+            background-image: url(/images/indexbck.jpg);
+            background-repeat: repeat-x;
+            background-size: 30% 120%;
         }
         #but{
-            grid-area: 2/2/3/3;background-image: url(/images/fill.jpg);background-size: 9cm 9cm;
+            grid-area: 2/2/3/3;
+            background-image: url(/images/fill.jpg);
+            background-size: 25vw 25vh;
         }
         .subbut{
-            width:6cm;height:7cm;margin:1cm;
         }
          #grid {
             display: grid;
-            grid-template-rows: 16cm;
-            grid-template-columns: 27cm 17cm;
-             height: 18.5cm;width:44cm; margin-left:1cm;margin-right:1cm;margin-top:10mm;
+            grid-template-rows: 60vh;
+            grid-template-columns: 60vw 40vw;
+            height: 70vh;
+            width: 100vw 100vw;
+            margin-left:1vw;
+            margin-right:1vw;
+            margin-top:5vh;
         }
         
         #div1 {
-            padding-top: 1cm;
-            padding-left: 1cm;
+            padding-top: 5vh;
+            padding-left: 1vw;
             display: grid;
-            grid-template-rows: 3cm 9cm;
-            grid-template-columns: 8cm 8cm 8cm;
-            height: 13cm;width:25cm;margin-left:1cm;margin-right:5mm;margin-top:1cm;margin-bottom:1cm;
+            grid-template-rows: 12vh 36vh;
+            grid-template-columns: 17.3vw 17.3vw 17.3vw;
+            height: 50vh;
+            width:55vw;
+            margin-left:1vw;
+            margin-right:1vw;
+            margin-top:6vh;
+            margin-bottom:2vh;
         }
         .subdiv1{
-            grid-area:1/1/2/4;background-image: url(/images/gamemode.jpg);background-size: 24cm 3cm
+            grid-area:1/1/2/4;
+            background-image: url(/images/gamemode.jpg);
+            background-size: 100% 100%;
         }
         
         .btn {
-            height: 2cm;
-            width: 6cm;
-            margin-bottom: 3mm;
+            height: 8vh;
+            width: 13vw;
         }
         
         .anc {
             text-decoration: none;
         }
         .maindiv{
-            height:35mm;width:44cm;margin-left:1cm;margin-right:1cm;margin-top:1cm;font-size:3cm;
+            height:10vh;
+            width:100%;
+            margin-top:5vh;
         }
         .subdiv{
-            width: 19.5cm;height: 4.5cm;background-image: url(/images/countgme.jpg);background-position: center;margin-left: 12cm;
+            width: 100%;
+            height: 18vh;
+            background-image: url(/images/countgme.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50vw 20vh;
         }
         #div2{
-            height: 14cm;width:15cm;margin-left:1cm;margin-right:5mm;margin-top:1cm;margin-bottom:1cm;
+            height: 50vh;
+            width:35vw;
+            margin-left:1vw;
+            margin-right:1vw;
+            margin-top:6vh;
+            margin-bottom:2vh;
         }
         .div2sub{
-            background-image: url(/images/abtgame.jpg);background-size: 13cm 12cm;height:12cm;width:13cm;margin:1cm;
+            background-image: url(/images/abtgame.jpg);
+            background-size: 100% 100%;
+            height:48vh;
+            width:32.5vw;
+            margin-left:2vw;
+            margin-right: 2vw;
+            margin-bottom: 3vh;
+            margin-top: 4.8vh;
         }
         #img{
-            background-image: url(/images/imgtwo.jpg);background-size: 8cm 9cm;grid-area: 2/3/3/4;background-color:yellowgreen;
+            background-image: url(/images/imgtwo.jpg);
+            background-size: 100% 100%;
+            grid-area: 2/3/3/4;
         }
         .img{
-            grid-area: 2/1/3/2;background-image: url(/images/imgone.jpg);background-size: 8cm 9cm;
+            grid-area: 2/1/3/2;
+            background-image: url(/images/imgone.jpg);
+            background-size: 100% 100%;
         }
         .norm{
-            margin-top:2mm;background-image: url(/images/normbut.jpg);background-size: 6cm 2cm;
+            position: absolute;
+            background-image: url(/images/normbut.jpg);
+            background-size: 100% 100%;
+            top: 48vh;
+            left: 23vw;
         }
         .hack{
-            background-image: url(/images/hackerbut.jpg);background-size: 6cm 2cm;
+            position: absolute;
+            background-image: url(/images/hackerbut.jpg);
+            background-size: 100% 100%;
+            top: 57vh;
+            left: 23vw;
         }
         .plus{
-            background-image: url(/images/hackerplusbut.jpg);background-size: 6cm 2cm;
+            position: absolute;
+            background-image: url(/images/hackerplusbut.jpg);
+            background-size: 100% 100%;
+            top: 66vh;
+            left: 23vw;
         }
         .div3{
-            height: 2cm;width:44cm;background-image: url(/images/allthebest.jpg);background-size: 12cm 2cm;background-repeat: no-repeat;background-position: center;margin:0mm;
+            position: absolute;
+            height: 8vh;
+            width:40vw;
+            background-image: url(/images/allthebest.jpg);
+            background-size: 40vw 8vh;
+            background-repeat: no-repeat;
+            top: 85vh;left: 30vw;
         }
 }
